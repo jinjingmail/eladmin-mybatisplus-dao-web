@@ -67,7 +67,7 @@
     <el-dialog append-to-body :close-on-click-modal="false" :before-close="crud.cancelCU" :visible.sync="crud.status.cu > 0" :title="crud.status.title" width="500px">
       <el-form ref="form" :model="form" :rules="rules" size="small" label-width="80px">
         <el-form-item label="应用" prop="app.id">
-          <el-select v-model.number="form.app.id" placeholder="请选择" style="width: 370px">
+          <el-select v-model="form.app.id" placeholder="请选择" style="width: 370px">
             <el-option v-for="item in apps" :key="item.id" :label="item.name" :value="item.id" />
           </el-select>
         </el-form-item>
@@ -139,7 +139,7 @@ export default {
       },
       rules: {
         'app.id': [
-          { required: true, message: '应用不能为空', trigger: 'blur', type: 'number' }
+          { required: true, message: '应用不能为空', trigger: 'blur' }
         ],
         deploys: [
           { required: true, message: '服务器不能为空', trigger: 'blur' }

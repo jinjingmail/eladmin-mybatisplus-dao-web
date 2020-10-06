@@ -392,7 +392,7 @@ export default {
       })
     },
     getSupDepts(deptId) {
-      getDeptSuperior(deptId).then(res => {
+      getDeptSuperior(Array.of(deptId)).then(res => {
         const date = res.content
         this.buildDepts(date)
         this.depts = date
